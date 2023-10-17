@@ -21,7 +21,7 @@ class Producto
 
     public function getById($id)
     {
-        $res = $this->connection->query("SELECT * FROM productos WHERE id = $id");
+        $res = $this->connection->query("call sp_producto_categoria($id);");
         $data = $res->fetch(PDO::FETCH_ASSOC);
 
         return $data;
