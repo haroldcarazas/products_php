@@ -1,14 +1,23 @@
 <?php
 require_once($_SERVER["DOCUMENT_ROOT"] . "/models/Producto.php");
+require_once($_SERVER["DOCUMENT_ROOT"] . "/models/Categoria.php");
 
 class ProductoController
 {
-    public function index($id)
+    // Muestra la vista con todos los productos
+    public function index()
     {
         $producto = new Producto();
-        $data = $producto->getById($id);
-        // var_dump($data);
+        $data = $producto->all();
 
-        include $_SERVER["DOCUMENT_ROOT"] . "/views/dashboard.php";
+        include $_SERVER["DOCUMENT_ROOT"] . "/views/read.php";
+    }
+
+    // Muestra la vista para crear un producto
+    public function create()
+    {
+        $data = Categoria::all();
+
+        include $_SERVER["DOCUMENT_ROOT"] . "/views/create.php";
     }
 }

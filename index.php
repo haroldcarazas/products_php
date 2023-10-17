@@ -1,12 +1,20 @@
 <?php
+// ENRUTADOR
+
 require_once(__DIR__ . "/controllers/ProductoController.php");
+
+// URL completa del navegador
+$urlCompleta = $_SERVER["REQUEST_URI"];
+
+// Separar las palabras por /
+$partes = explode("/", $urlCompleta);
 
 $controller = new ProductoController();
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $productoId = $_POST["producto_id"];
-
-    $controller->index($productoId);
-} else {
-    $controller->index(1);
+if (end($partes) === "create") {
+    $controller->create();
+    die();
 }
+
+
+$controller->index();

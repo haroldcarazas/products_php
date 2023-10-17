@@ -13,7 +13,7 @@ class Producto
 
     public function all()
     {
-        $res = $this->connection->query("SELECT * FROM productos");
+        $res = $this->connection->query("call sp_productos_categorias();");
         $data = $res->fetchAll(PDO::FETCH_ASSOC);
 
         return $data;
