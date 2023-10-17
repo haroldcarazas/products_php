@@ -9,34 +9,36 @@
 </head>
 
 <body>
-    <h1>Todos los productos</h1>
+    <main class="p-4">
+        <h1 class="text-3xl mb-6">Todos los productos</h1>
 
-    <a href="/index.php/crear">Crear nuevo producto</a>
-    
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th>Precio</th>
-                <th>Categoría</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-            foreach ($data as $producto) {
-            ?>
+        <a href="/index.php/create" class="px-2 py-1 bg-green-500 rounded-md text-white mb-6 inline-block hover:bg-blue-500 hover:text-black">Crear nuevo producto</a>
+
+        <table>
+            <thead>
                 <tr>
-                    <td><?= $producto["id"] ?></td>
-                    <td><?= $producto["nombre"] ?></td>
-                    <td><?= $producto["precio"] ?></td>
-                    <td><?= $producto["categoria_nombre"] ?></td>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Categoría</th>
                 </tr>
-            <?php
-            }
-            ?>
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                <?php
+                foreach ($data as $producto) {
+                ?>
+                    <tr>
+                        <td><?= $producto["id"] ?></td>
+                        <td><?= $producto["nombre"] ?></td>
+                        <td><?= $producto["precio"] ?></td>
+                        <td><?= $producto["categoria_nombre"] ?></td>
+                    </tr>
+                <?php
+                }
+                ?>
+            </tbody>
+        </table>
+    </main>
 </body>
 
 </html>
