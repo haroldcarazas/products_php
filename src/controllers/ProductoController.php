@@ -1,6 +1,6 @@
 <?php
-require_once($_SERVER["DOCUMENT_ROOT"] . "/models/Producto.php");
-require_once($_SERVER["DOCUMENT_ROOT"] . "/models/Categoria.php");
+require_once($_SERVER["DOCUMENT_ROOT"] . "/src/models/Producto.php");
+require_once($_SERVER["DOCUMENT_ROOT"] . "/src/models/Categoria.php");
 
 class ProductoController
 {
@@ -10,7 +10,7 @@ class ProductoController
         $producto = new Producto();
         $data = $producto->all();
 
-        include $_SERVER["DOCUMENT_ROOT"] . "/views/read.php";
+        include $_SERVER["DOCUMENT_ROOT"] . "/src/views/read.php";
     }
 
     // Muestra la vista para crear un producto
@@ -18,6 +18,6 @@ class ProductoController
     {
         $data = Categoria::all();
 
-        include $_SERVER["DOCUMENT_ROOT"] . "/views/create.php";
+        include $_SERVER["DOCUMENT_ROOT"] . "/src/views/create.php";
     }
 }
