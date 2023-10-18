@@ -23,6 +23,13 @@ if ($_SERVER["REQUEST_METHOD"] === "GET") {
         $controller->create();
         die();
     }
+
+    // Penúltimo
+    if ($partes[count($partes) - 2] === "edit") {
+        $id = $partes[count($partes) - 1];  // Último elemento
+        $controller->edit($id);
+        die();
+    }
 }
 
 

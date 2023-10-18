@@ -45,6 +45,7 @@
                     <th>Nombre</th>
                     <th>Precio</th>
                     <th>Categoría</th>
+                    <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -56,6 +57,12 @@
                         <td><?= $producto["nombre"] ?></td>
                         <td><?= $producto["precio"] ?></td>
                         <td><?= $producto["categoria_nombre"] ?></td>
+                        <td>
+                            <a href="/index.php/edit/<?= $producto["id"] ?>" class="bg-blue-400 px-2 py-1 rounded-md text-white">Editar</a>
+                            <form action="" class="inline">
+                                <button type="submit" class="inline bg-red-400 px-2 py-1 rounded-md text-white">Eliminar</button>
+                            </form>
+                        </td>
                     </tr>
                 <?php
                 }
