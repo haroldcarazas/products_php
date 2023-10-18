@@ -11,10 +11,10 @@
 <body>
     <main class="h-screen flex flex-col justify-center items-center">
         <h1 class="text-3xl mb-6">Crear un producto</h1>
-        <form action="" class="w-[350px] bg-sky-300 flex flex-col rounded-md py-4 gap-5">
+        <form action="/index.php/create" method="post" class="w-[350px] bg-sky-300 flex flex-col rounded-md py-4 gap-5">
             <div class="flex gap-2 flex-col justify-center items-center">
                 <label for="">Nombre</label>
-                <input type="text" name="nombre" class="w-[50%] focus:bg-red-500">
+                <input type="text" name="nombre" class="w-[50%]">
             </div>
 
             <div class="flex gap-2 flex-col justify-center items-center">
@@ -24,7 +24,7 @@
 
             <div class="flex gap-2 flex-col justify-center items-center">
                 <label for="">Categoría</label>
-                <select name="" id="">
+                <select name="categoria_id" id="">
                     <?php
                     foreach ($data as $categoria) {
                     ?>

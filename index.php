@@ -11,9 +11,18 @@ $partes = explode("/", $urlCompleta);
 
 $controller = new ProductoController();
 
-if (end($partes) === "create") {
-    $controller->create();
-    die();
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    if (end($partes) === "create") {
+        $controller->store($_POST);
+        die();
+    }
+}
+
+if ($_SERVER["REQUEST_METHOD"] === "GET") {
+    if (end($partes) === "create") {
+        $controller->create();
+        die();
+    }
 }
 
 
